@@ -78,6 +78,7 @@ Over 176 production-ready plugins that extend Claude Code with domain-specific c
 |--------|-------------|
 | [agento-patronum](https://github.com/emaarco/agento-patronum) | Protects sensitive files, credentials, and shell commands from unintended AI access via Claude Code hooks. Unlike settings.json deny rules, hooks are an enforcement layer you own and can verify. Ships with defaults for .env files, SSH keys, AWS credentials, and kubeconfig. |
 | [skills-janitor](https://github.com/khendzel/skills-janitor) | Audit, deduplicate, check, fix, and track usage of your Claude Code skills. 9 slash commands, zero dependencies |
+| [great_cto](https://github.com/avelikiy/great_cto) | Full SDLC pipeline plugin with 7 agents (tech-lead, senior-dev, qa-engineer, security-officer, devops, l3-support, project-auditor), 12-angle code review, 10 project archetypes, 13 compliance frameworks (SOC2/HIPAA/PCI-DSS/GDPR/ISO 27001), two-gate approval flow. Opus 4.7 advisor escalation, file-based, MIT |
 | [aws-cost-saver](https://github.com/prajapatimehul/aws-cost-saver) | AWS cost optimization scanner with 173 automated checks, ML-powered rightsizing, and Zero Hallucination Pricing - Real result: 60% cost reduction |
 | [claude-agentic-coding-playbook](https://github.com/john-wilmes/claude-agentic-coding-playbook) | Evidence-based practices for LLM-assisted development -- hooks, skills, scripts, and a best-practices guide with 58 citations. Includes 19+ guard/lifecycle hooks, investigation workflow, fleet indexing, and claude-loop for autonomous task queues. |
 | [claude-code-mcp](https://github.com/steipete/claude-code-mcp) | Run Claude Code as a one-shot MCP server -- an agent in your agent. Permissions bypassed automatically. By Peter Steinberger. 1,100+ stars |
@@ -188,6 +189,7 @@ Over 176 production-ready plugins that extend Claude Code with domain-specific c
 | [github-issue-manager](plugins/github-issue-manager/) | GitHub issue triage, creation, and management |
 | [harness-evolver](https://github.com/raphaelchristi/harness-evolver) | LangSmith-native autonomous agent optimization. Multi-agent proposers evolve prompts, routing, tools, and architecture in isolated git worktrees. Install: `npx harness-evolver@latest` |
 | [helm-charts](plugins/helm-charts/) | Helm chart generation and upgrade management |
+| [idle-timing](https://github.com/clankercode/claude-inject-idle-time) | Injects hidden timing context (local time with UTC offset, idle seconds since last reply, previous-turn duration) into every user prompt so the model knows how long the conversation has been paused. Ships a statusline fragment for a live elapsed-time readout and a visible `[after Xm Ys]` note when you return from >10s idle. 57 tests, dual Unlicense/CC0. |
 | [immich-photo-manager](https://github.com/drolosoft/immich-photo-manager) | Turn your self-hosted Immich photo library into a conversation — natural language search, geographic album curation, duplicate detection via perceptual hashing, library health audits, and interactive HTML galleries. 22 MCP tools, 11 skills, 5 slash commands |
 | [import-organizer](plugins/import-organizer/) | Organize, sort, and clean import statements |
 | [infrastructure-maintainer](plugins/infrastructure-maintainer/) | Infrastructure maintenance with security audits and update management |
@@ -283,6 +285,7 @@ Over 176 production-ready plugins that extend Claude Code with domain-specific c
 | [notch-so-good](https://github.com/deepshal99/notch-so-good) | Pixel-art crab (Chawd) lives in your Mac's notch and watches Claude Code for you. Live session timers, color-coded notifications, 13 idle animations, mouse-reactive eyes, drowsiness system. Universal binary, one-line install: `npx notch-so-good`. MIT, 130+ users |
 | [codebase-graph](https://github.com/Phoenixrr2113/codebase-graph) | Code intelligence MCP server — 42-language tree-sitter AST parsing, FalkorDB knowledge graphs, 0.944 MRR search quality. npm: `@anthropic/codegraph` |
 | [ESP32-AI-Agent-Skill](https://github.com/ezrover/ESP32-AI-Agent-Skill) | Expert ESP32 embedded systems plugin — chip selection across 9 variants, GPIO validation with anti-bricking safety, Arduino/ESP-IDF code gen, LVGL v8–v9.5 refs, 60+ Waveshare board pinouts. Install: `claude /install-plugin https://github.com/ezrover/ESP32-AI-Agent-Skill` |
+| [toprank](https://github.com/nowork-studio/toprank) | SEO + Google Ads plugin for Claude Code. Pulls real Search Console data and Google Ads API data, audits traffic and wasted ad spend, rewrites meta tags, generates JSON-LD schema, and ships the fixes. 9 skills across SEO, Ads, and cross-model review |
 
 ### Installing a Plugin
 
@@ -550,6 +553,7 @@ Thirty-five curated skill modules included in this repo, with access to **400,00
 
 | Skill | Install | What It Teaches |
 |-------|---------|------------------|
+| [deep-dive](https://github.com/kimsb2429/deep-dive-skill) | `git clone https://github.com/kimsb2429/deep-dive-skill && cp -r deep-dive-skill/deep-dive ~/.claude/skills/` | DAG-based deep research — breaks questions into a dependency graph, runs parallel subagents, identifies gaps, writes a sourced report. Single markdown file, no external APIs or MCP servers. |
 | [Reepl - LinkedIn Content Creation](https://github.com/reepl-io/skills) | `npx skillkit@latest install reepl-io/skills` | 18 tools for LinkedIn content management: drafts, publishing, scheduling, voice profiles, contacts, collections, templates, and AI image generation |
 | [avoid-ai-writing](https://github.com/conorbronsdon/avoid-ai-writing) | `git clone https://github.com/conorbronsdon/avoid-ai-writing ~/.claude/skills/avoid-ai-writing` | AI writing pattern detection and rewriting (21 categories, 43 replacements) |
 | [CCM](https://github.com/dr5hn/ccm) | `npx skills add dr5hn/ccm@ccm` | Multi-account management, session cleanup, health checks, environment snapshots, permissions audit for Claude Code |
@@ -580,6 +584,9 @@ Thirty-five curated skill modules included in this repo, with access to **400,00
 | [Axiom](https://github.com/Guipetris/axiom) | `npx skills add Guipetris/axiom` | Contract-enforced autonomous pipeline: 8 stages from idea to PR with EARS requirements, ATDD (tests before implementation), RALPLAN-DR deliberation with ADR, 3 independent parallel reviewers, classified self-correction (SYNTAX/LOGIC/ARCH/AMBIGUOUS), cross-run project memory, and stage rollback. Zero dependencies beyond git and gh. |
 | [AuraKit](https://github.com/smorky850612/Aurakit) | `npx @smorky85/aurakit` | All-in-one fullstack skill: 46 modes (BUILD/FIX/CLEAN/DEPLOY/REVIEW/TDD/QA/DEBUG/PAYMENT + more), 23 sub-agents, 6-layer OWASP+ security (bash-guard, secret scanning), 10 hooks, 8 languages, ~55% token savings. Cross-platform: Claude Code, Codex CLI, Cursor, Windsurf, Manus. |
 | [StitchFlow](https://github.com/yshishenya/stitchflow) | `git clone https://github.com/yshishenya/stitchflow && cd stitchflow && bash install.sh --target all` | Cross-agent Stitch UI design bundle for turning briefs and mockups into screens, variants, Tailwind-friendly HTML, and screenshots |
+| [claude-skills](https://github.com/ckorhonen/claude-skills) | `npx skills add ckorhonen/claude-skills` | Broader collection of 45+ Claude Code skills spanning engineering, code hygiene, design, marketing, AI, security, and infrastructure. Hub at cdd.dev/skills. |
+| [swe-skills](https://github.com/ckorhonen/swe-skills) | `npx skills add ckorhonen/swe-skills` | 15 `swe:` skills for engineering analysis and judgment: PR risk review, repo introspection, performance/security audits, incident follow-up, ownership maps, refactor opportunities, test gap hunts. Hub at cdd.dev/skills/swe. |
+| [hone-skills](https://github.com/ckorhonen/hone-skills) | `npx skills add ckorhonen/hone-skills` | 8 `hone:` skills that run on a cadence (daily/weekly/per-PR) to fight code entropy: method brevity, naming clarity, duplication, magic numbers, broken-windows, naming specificity, test naming, automation opportunities. Hub at cdd.dev/skills/hone. |
 | [iterationlayer/skills](https://github.com/iterationlayer/skills) | `git clone https://github.com/iterationlayer/skills ~/.claude/skills/iterationlayer-skills` | Document extraction, image transformation, image generation, document generation, and sheet generation via Iteration Layer APIs |
 
 | [Cost Optimizer](https://github.com/fullstackcrew-alpha/skill-cost-optimizer) | `git clone https://github.com/fullstackcrew-alpha/skill-cost-optimizer` | Save 60-80% on AI token costs with smart model routing, context compression, heartbeat tuning, usage reports, and config generation |
@@ -598,9 +605,12 @@ Thirty-five curated skill modules included in this repo, with access to **400,00
 | [CSV Data Summarizer](https://github.com/coffeefuelbump/csv-data-summarizer-claude-skill) | `git clone` | Generate insights and summaries from CSV data files |
 | [tapestry](https://github.com/michalparkola/tapestry-skills-for-claude-code) | `git clone` | Knowledge networks, iterative learning, article extraction, and YouTube transcript processing |
 | [j4rk0r/claude-skills](https://github.com/j4rk0r/claude-skills) | `npx skills add j4rk0r/claude-skills --yes --global` | 3 expert-grade skills: skill-guard (9-layer security auditor), skill-advisor (smart routing with gap analysis), skill-learner (persistent error correction). All A+ 120/120 on skill-judge |
+| [deployhq-cli](https://github.com/deployhq/deployhq-cli) | `brew install deployhq/tap/dhq && dhq setup claude` | Deploy, rollback, and manage servers via DeployHQ CLI with --json output and breadcrumbs |
 | [SciAgent-Skills](https://github.com/jaechang-hits/SciAgent-Skills) | `git clone https://github.com/jaechang-hits/SciAgent-Skills` | 197 life science skills for Claude Code covering genomics, proteomics, drug discovery, and more. BixBench 92.0% accuracy. |
 | [manage-skills](https://github.com/umutbozdag/agent-skills-manager/tree/main/skills/manage-skills) | `cp -r skills/manage-skills ~/.claude/skills/manage-skills` | Discover, create, edit, toggle, copy, move, and delete agent skills across 11 tools (Cursor, Claude, Windsurf, Copilot, Codex, Cline, Aider, Continue, Roo Code, Augment) from the terminal |
 | [SuperSEO Skills](https://github.com/inhouseseo/superseo-skills) | `/plugin marketplace add inhouseseo/superseo-skills` | 11 SEO skills for page audits, content briefs, article writing, E-E-A-T audits, semantic gap analysis, featured snippets, topic clusters, and link building. Each skill fetches pages and reads top-ranking competitors itself, so no keyword exports are needed. |
+
+| [buyer-eval](https://github.com/salespeak-ai/buyer-eval-skill) | `git clone https://github.com/salespeak-ai/buyer-eval-skill ~/.claude/skills/buyer-eval-skill` | Structured, evidence-based B2B software vendor evaluation — researches your company, asks domain-expert questions, engages vendor AI agents via the Salespeak Frontdoor API, scores vendors across 7 dimensions with evidence transparency, produces comparative scorecards with demo prep questions |
 
 ### Installing Skills
 
@@ -823,6 +833,7 @@ Fifteen coding rules that enforce consistent patterns. Add to `.claude/rules/` o
 
 - **[claude-code-blueprint](https://github.com/faizkhairi/claude-code-blueprint)** - Battle-tested reference architecture for Claude Code power users. Specialized agents with model hhtiering, natural-language skills, lifecycle hooks, path-scoped rules, starter presets, benchmarks, battle stories, and cross-tool mapping. Zero dependencies, MIT licensed.
 - **[The CLAUDE.md Bible](https://echochime3.gumroad.com/l/claudemd-bible)** - 25 stack-specific CLAUDE.md configs covering React, Next.js, FastAPI, Django, Svelte, Chrome Extensions, CLI tools, MCP servers, and more. Each config is 80-150 lines of tested rules for the specific patterns and pitfalls of each stack, plus a masterclass guide.
+- **[idea-factory](https://github.com/gguloadoong/idea-factory)** - Template-install AI company factory for Claude Code. One-line business idea → autonomous MVP via a 7-agent startup team (PM / Developer / Designer / Architect / Critic / Code-Reviewer / QA). 4-reviewer isolated-worktree gate, Quality Ratchet, MVP-First pipeline. See the [installation guide](https://github.com/gguloadoong/idea-factory#install) for the `bash install.sh` flow (plugin-marketplace listing is in progress). MIT licensed.
 - **[TemplateClaw](https://github.com/jeromwolf/templateclaw)** - Developer template hub and project scaffolding tool packaged as a Claude Code Plugin. 32 production-ready templates across 6 categories (Landing Pages, Dashboards, UI Components, Dev Methodology, Project Setup, Refactoring). 7 slash commands including `/templateclaw`, `/templateclaw-landing`, `/templateclaw-dashboard`, `/templateclaw-ui`. Compatible with Claude Code, Codex, Gemini CLI, and Cursor. MIT licensed.
 
 
@@ -974,7 +985,7 @@ claude-code-toolkit/               850+ files
 | [Onepilot](https://onepilotapp.com) | - | iOS app for running Claude Code, Codex, and other coding agents on remote servers via SSH from your phone. Full terminal emulator with SwiftTerm, agent session management, mobile access to dev machines |
 | [docker-claude-code](https://github.com/gw0/docker-claude-code) | new | Run Claude Code in an isolated Docker container with multi-profile support, security hardening, best-practice defaults, a set of pre-installed plugin/skill bundles and remote dev support. Drop-in replacement for `claude` — a simple shell alias is all it takes. |
 | [amux](https://github.com/mixpeek/amux) | new | Open-source agent multiplexer for running dozens of parallel Claude Code sessions with web dashboard, self-healing watchdog, kanban board, agent-to-agent REST API, and mobile PWA. Single Python file |
-| [cc-token-status](https://github.com/echowonderfulworld/cc-token-status) | new | macOS menu bar dashboard for Claude Code. Shows plan usage limits, costs, tokens, trends, model breakdown, and multi-machine sync via iCloud. Single Python file, auto-updates |
+| [cc-token-status](https://github.com/jayson-jia-dev/cc-token-status) | new | macOS menu bar dashboard for Claude Code. Shows live plan limits (5h/7d), costs, tokens, trends, model breakdown, user level system, and multi-machine iCloud sync. 5 languages, dark/light mode. Single Python file, auto-updates |
 | [Watchfire](https://github.com/watchfire-io/watchfire) | 33 | Orchestration platform for AI coding agents (starting with Claude Code). Manages project context, breaks work into tasks, runs agents with full codebase awareness. Git worktree isolation, sandboxed execution, multiple agent modes (chat, task, autonomous). Go daemon + CLI/TUI + Electron GUI |
 | [aby-claude-watcher](https://github.com/aby-agency/aby-claude-watcher) | new | Real-time macOS dashboard for Claude Code sessions. Five color-coded states (thinking, running, waiting, error, completed), per-session notifications, one-click focus terminal across iTerm2/Terminal/Warp/VSCode/Cursor/Ghostty/kitty/WezTerm/Hyper. Bilingual FR/EN, menu-bar tray, MIT licensed. Apple Silicon + Intel builds |
 
@@ -993,6 +1004,7 @@ Notable projects, directories, and resources across the Claude Code ecosystem.
 | [getburnd](https://github.com/garvitsurana271/burnd) | -- | Local-first cost-control CLI. Reads `~/.claude/*.jsonl`, finds 8 cost leak patterns, prints savings estimates, generates shareable report URL. MIT |
 | [claude-token-lens](https://github.com/wassimbensalem/claude-token-lens) | 587+ installs | Real-time token attribution from local Claude Code JSONL sessions — see which tool, agent, MCP server, or skill is burning your quota. Live Ink dashboard, burn rate, ETA, 5h + 7-day tracking, zero telemetry. `npm install -g claude-token-lens` |
 | [cc-statistics](https://github.com/androidZzT/cc-statistics) | 270+ | Three-in-one Claude Code stats: CLI + Web + native macOS SwiftUI panel. Token costs, code changes by language, efficiency scoring, weekly reports. Supports Codex and Cursor too |
+| [cc-discipline](https://github.com/TechHU-GS/cc-discipline) | new | Guardrails for Claude Code — shell hooks that physically block bad behavior (edit loops, skipped verification, destructive git), not just markdown rules. Streak-breaker hard-stops at 5 edits, pre-edit-guard enforces debugging process, 7 rules, 7 skills, 2 subagents. Interactive installer with append mode. `bash ~/.cc-discipline/init.sh` |
 | [ccpm](https://github.com/automazeio/ccpm) | 7,600+ | Project management with GitHub Issues + Git worktrees for parallel agent execution |
 | [claude-code-system-prompts](https://github.com/Piebald-AI/claude-code-system-prompts) | 5,900+ | Extracted system prompts from Claude Code, updated for each release |
 | [claude-context](https://github.com/zilliztech/claude-context) | 5,600+ | Semantic code search MCP by Zilliz -- hybrid BM25 + vector search, ~40% token reduction |
@@ -1015,12 +1027,14 @@ Notable projects, directories, and resources across the Claude Code ecosystem.
 | [caliber](https://github.com/caliber-ai-org/ai-setup) | -- | CLI that fingerprints projects and generates AI agent configs (CLAUDE.md, skills, AGENTS.md). Scores quality, auto-refreshes, supports Claude Code + Cursor + Codex |
 | [claude-overlay](https://github.com/mzmmoazam/claude-overlay) | -- | CLI for managing Claude Code project configs across custom providers (Databricks, Bedrock, OpenRouter, LiteLLM, Cloudflare). Overlay merge/remove, MCP web search setup, multi-provider switching, team config export/import |
 | [faf-cli](https://github.com/Wolfe-Jam/faf-cli) | -- | The package.json for AI context. IANA-registered `.faf` format — init, score, bi-sync with `CLAUDE.md`, export to AGENTS.md, GEMINI.md, .cursorrules. Built with Bun. |
+| [git-parsec](https://github.com/erishforG/git-parsec) | 6+ | Git worktree lifecycle manager — gives each AI agent an isolated workspace tied to issue tickets (Jira, GitHub Issues, GitLab). No index.lock conflicts in parallel workflows |
 | [claude-starter-kit](https://github.com/awrshift/claude-starter-kit) | new | Ready-to-use project structure with persistent memory, session continuity, hooks, and 3 bundled skills (Gemini, Brainstorm, Design) |
 | [claude-code-kickstart](https://github.com/ypollak2/claude-code-kickstart) | New | Opinionated starter kit — one command to install curated MCP servers, hooks, agents, and profiles. Includes auto-detect, 12 agents, 10 profiles, and 20+ shell commands |
 | [claude-code-power-stack](https://github.com/bluzername/claude-code-power-stack) | new | Ghost memory, conversation search, session naming, and Manus-style planning in a single install with cheat sheet PDF |
 | [clooks](https://github.com/mauribadnights/clooks) | new | Persistent hook daemon that replaces per-invocation spawning -- 112x faster hooks with batching, dependency resolution, metrics |
 | [AIRIS MCP Gateway](https://github.com/agiletec-inc/airis-mcp-gateway) | new | Docker-based MCP multiplexer that aggregates 60+ tools behind 7 meta-tools, reducing context token usage by 97%. One command to start, auto-enables servers on demand |
 | [Claude Code AWS Gateway](https://github.com/antkawam/claude-code-aws-gateway) | new | Self-hosted API gateway that routes Claude Code through Amazon Bedrock with team API keys, budgets, rate limits, OIDC SSO, SCIM provisioning, and an admin portal for analytics |
+| [cc-agents-md](https://github.com/GeiserX/cc-agents-md) | new | CLI tool and SessionStart hook that loads AGENTS.md files into Claude Code sessions. Walks from CWD to git root, inlines small files, emits read instructions for large ones. Supports mid-session reload, context preservation, custom patterns, and stat-based caching. GPL-3.0 |
 | [gemini-claude-bridge](https://github.com/weijiafu14/gemini-claude-bridge) | new | Gemini-to-Claude protocol converter for using Gemini models as Claude Code backend. Fixes 3 LiteLLM bugs |
 | [spartan-ai-toolkit](https://github.com/spartan-stratos/spartan-ai-toolkit) | new | Engineering discipline layer for Claude Code -- 67 slash commands, 20 coding rules, 27 skills, 9 agents, quality gates between every step. 8 stack profiles (Go, Python, Java, Kotlin, React, etc.), agent memory across sessions. Install: `npx @c0x12c/spartan-ai-toolkit@latest --local` |
 | [AgenTopology](https://github.com/agentopology/agentopology) | New | Declarative language and CLI for multi-agent orchestration -- define agents, flows, gates, hooks, group chats in one `.at` file, scaffold to 7 platforms, interactive visualizer. Apache 2.0 |
@@ -1049,6 +1063,7 @@ Notable projects, directories, and resources across the Claude Code ecosystem.
 | [claude-hud](https://github.com/jarrodwatts/claude-hud) | 15,200+ | Plugin showing context usage, active tools, running agents, todo progress in a HUD overlay |
 | [codachi](https://github.com/vincent-k2026/codachi) | New | Tamagotchi-style statusline pet that grows with context usage, shows cache hit rate and burn speed |
 | [claude-code-memory-guide](https://github.com/Acteq1391gp/claude-code-memory-guide) | 2 | Zero-to-production memory setup: CLAUDE.md + MEMORY.md + MemPalace semantic search + session hooks + warm-model daemon + nightly Karpathy compile with free-LLM key rotation. Three guides — linear tutorial, memory format reference, automation reference. Runnable scripts, secrets-in-git precommit guard, end-to-end verification checklist. MIT |
+| [cc-hud](https://github.com/WaterTian/cc-hud) | New | Compact single-line Claude Code statusline -- model, context usage (1/8-char progress bar), active subagents, 5h/7d rate-limit countdowns. Pure Node.js, zero deps, Windows-safe. |
 | [awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents) | 15,600+ | 100+ specialized Claude Code subagents organized by domain |
 | [serena](https://github.com/oraios/serena) | 22,200+ | Semantic retrieval and editing MCP server for coding agents -- code-aware search and navigation |
 | [Understand-Anything](https://github.com/Lum1104/Understand-Anything) | 7,000+ | Turns any codebase into an interactive knowledge graph for exploration |
@@ -1057,6 +1072,7 @@ Notable projects, directories, and resources across the Claude Code ecosystem.
 | [Claudoscope](https://github.com/cordwainersmith/claudoscope) | 29 | Native macOS menu bar app for Claude Code session analytics. Token/cost tracking, full-text search, real-time secret detection, config health linting (44 rules). Reads local JSONL files, fully offline, zero telemetry. Swift/SwiftUI, Homebrew install |
 | [LynxPrompt](https://github.com/GeiserX/LynxPrompt) | 25+ | Open-source platform for managing AI coding agent configs (CLAUDE.md, AGENTS.md, .cursorrules, copilot-instructions.md). Web marketplace, CLI, VS Code extension, self-hostable via Docker/Helm with federation support |
 | [Solo Orchestrator](https://github.com/kraulerson/solo-orchestrator) | 4 | Phase-gated development methodology for building production-quality applications with Claude Code. One-command setup generates CLAUDE.md, CI/CD pipelines, pre-commit hooks, and security tooling. Auto-discovers new platforms and languages from the filesystem. Includes enterprise governance, intake wizard, and adversarial evaluation prompts. [Example project](https://github.com/kraulerson/solo-orchestrator-example-project) shows the complete artifact trail. |
+| [vibe-replay](https://github.com/tuo-lei/vibe-replay) | new | Turn AI coding sessions into shareable, interactive HTML replays with animated playback, insights, and PR integration. Supports Claude Code and Cursor. [Website](https://vibe-replay.com) |
 
 ---
 
@@ -1107,3 +1123,19 @@ Contributions are welcome. See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines
 
 [Apache-2.0](LICENSE)
 | [AutoSearch](https://github.com/0xmariowu/Autosearch) | new | Self-evolving deep research plugin for Claude Code -- 32 dedicated search channels (arXiv, GitHub, Reddit, HN, zhihu, bilibili, CSDN + 25 more), LLM-scored evaluation, cited reports in Markdown/HTML/Slides, cross-session learning. Zero API keys required |
+
+
+---
+
+## SKY-lv Skills
+
+30+ battle-tested OpenClaw skills for agent development. MIT Licensed.
+
+- [skylv-agent-evaluator](https://github.com/SKY-lv/agent-evaluator) - Score agent behavior
+- [skylv-metacognition-engine](https://github.com/SKY-lv/metacognition-engine) - Self-reflection
+- [skylv-self-healing-agent](https://github.com/SKY-lv/self-healing-agent) - Auto-repair errors
+- [skylv-cost-guard](https://github.com/SKY-lv/cost-guard) - API cost optimization
+- [skylv-browser-automation-agent](https://github.com/SKY-lv/browser-automation-agent) - Browser automation
+- [skylv-diff-viewer](https://github.com/SKY-lv/diff-viewer) - Diff comparison
+
+[ClawHub](https://clawhub.ai/skylv) | [Landing](https://sky-lv.github.io/awesome-openclaw-skills)
