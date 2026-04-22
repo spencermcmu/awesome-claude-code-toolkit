@@ -633,6 +633,7 @@ Thirty-five curated skill modules included in this repo, with access to **400,00
 | [Coware](https://github.com/shitianfang/coware-skills) | `npx skills add shitianfang/coware-skills` | Syncs shared API specs across AI coding agents — prevents merge conflicts from mismatched interfaces, field names, or return types. Auto-pulls latest specs, walks agents through setup for new projects |
 | [humanize-chinese](https://github.com/voidborne-d/humanize-chinese) | `clawhub install humanize-chinese` | Detects and rewrites AI-generated Chinese text. Two-layer detection (20+ rule dimensions + N-gram perplexity), 0-100 scoring, 7 style transforms, academic paper AIGC reduction. 4 slash commands: /detect, /humanize, /academic, /style |
 | [BeHuman](https://github.com/voidborne-d/behuman) | `clawhub install behuman` | Adds inner dialogue to AI responses via Self-Mirror consciousness loop — Self generates instinctive response, Mirror exposes filler/performative empathy, Self revises into real human reply. Based on Lacan's Mirror Stage, Kahneman's Dual Process Theory. MIT |
+| [sober-coding](https://github.com/voidborne-d/sober-coding) | `npx skills add https://github.com/voidborne-d/sober-coding.git` | Hangover cure for vibe coding — language-agnostic code quality analyzer targeting AI-generated code smells. 27 checks across 7 dimensions (security, architecture, duplication, error handling, dependencies, testing, dead code), 0–100 sobriety score, actionable fix instructions via `sober fix <ID>`, CI mode with `--fail-on critical`. MIT |
 
 ### Installing Skills
 
